@@ -1,25 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import petsScreen from './petScreen';
-import SignUpScreen from "./SignUpScreen"
+import PetsScreen from './PetsScreen';
+import SignUpScreen from "./SignUpScreen";
+import Pets from './components/Pets'
 
-export default function App() {
-  return (
-    
-      <SignUpScreen/>
-    //  <petsScreen/>
-      // <Pets/> 
-   
-  );
+
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: ["jenny","peace","terry"],
+      age: "",
+      location: "",
+     
+    }
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+      {/*  <SignUpScreen/> */}
+      {/* <Pets /> */}
+      <PetsScreen/>
+
+
+      </View>
+
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 100,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: "space-around",
   },
 });
+
+export default App ;
